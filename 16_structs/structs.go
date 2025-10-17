@@ -18,7 +18,7 @@ type order struct { //making struct of order syntax is: type struct_name struct
 	createdAt time.Time //nanosecond
 }
 
-// reciever type -> how to relate the methods in structs
+// reciever method type -> how to relate the methods in structs
 func (o *order) changeStatus(status string) { //if we dont pass by ref it will not change -> only update when we pass by ref
 	o.status = status //updating the status, struct doing deref automatically
 }
