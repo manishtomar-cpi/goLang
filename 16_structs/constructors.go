@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -18,5 +19,6 @@ func newStudent(id string, name string, class string) *students { //this functio
 		name:  name,
 		class: class,
 	}
+	fmt.Println(&myStudent, "my student address from constructor")
 	return &myStudent
 }

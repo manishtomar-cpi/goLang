@@ -49,8 +49,8 @@ func main() {
 
 	fmt.Println("after updated status", myOrder)
 
-	firstStudent := newStudent("1", "manish", "10th")
-	fmt.Println(firstStudent)
+	firstStudent := newStudent("1", "manish", "10th") // this first student is itself a pointer because of constructor function
+	fmt.Println(firstStudent)                         //now go automatically deref this for us thats why the value at the addres this pointer is pointing is displaying in terminal
 	fmt.Println(firstStudent.name)
 
 	//inline structs used of declearing something
