@@ -13,6 +13,9 @@ import (
 - We use done in difer because sometime program cash in processing the not come to done if we use done at last so after crash done should execute
 
 unbuffered channel -> un buffered channel is blocking means program should block at the stage, one by one communication, means we are sending and waiting, means we can send one data at the time we should wait for recieve then we can send next data, slow in the process so we used buffered channel,
+
+Why single unbuffered channel goes into deadlock?
+The main function itself is a goroutine. When ch <- "ping" runs, it waits for someone to receive. But there’s no other goroutine running that can receive. So the main goroutine blocks forever. If still no receiver ever appears, Go realizes nothing can continue error - deadlock!
 */
 
 func processNum(numChan chan int) {
